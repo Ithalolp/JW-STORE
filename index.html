@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="JW Store - Moda Streetwear Premium. A melhor seleção de roupas urbanas."
+    />
+    <meta name="theme-color" content="#000000" />
+    <title>JW Store | Streetwear Premium</title>
+
+    <!-- Preconnect para Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Fontes e Ícones -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="script.js"></script>
+    <script defer src="catalogo.js"></script>
+  </head>
+  <body id="app">
+    <!-- Header -->
+    <header class="header" id="header">
+      <div class="container header-inner">
+        <a href="#" class="logo">JW Store</a>
+
+        <div class="header-actions">
+          <button class="icon-btn" aria-label="Carrinho" id="cartBtn">
+            <i class="fas fa-shopping-bag"></i>
+            <span class="badge" id="cartCount">0</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero Section -->
+      <section class="hero">
+        <img
+          src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=600&q=80"
+          alt="Coleção de Roupas JW Store"
+          class="hero-bg"
+          loading="eager"
+        />
+        <div class="hero-content">
+          <h1 class="hero-title">Mensagem de <br />Visita</h1>
+          <p style="font-size: 1.1rem; margin-bottom: 30px; opacity: 0.9">
+            Roupas premium para a vida 
+          </p>
+        </div>
+      </section>
+
+      <!-- Catálogo -->
+      <section id="catalogo" class="container" style="padding: 80px 20px">
+        <div style="text-align: center; margin-bottom: 40px">
+          <h2
+            style="
+              font-size: 2rem;
+              text-transform: uppercase;
+              letter-spacing: -1px;
+              margin-bottom: 10px;
+            "
+          >
+            Catálogo
+          </h2>
+          <div class="filters-wrapper" id="filtersContainer">
+            <!-- Injetado via JS -->
+          </div>
+        </div>
+
+        <div id="productsGrid" class="catalog-grid">
+          <!-- Estado de Loading Inicial -->
+          <div class="spinner"></div>
+        </div>
+      </section>
+
+      <!-- Instagram Section -->
+      <section class="container" style="margin-top: 0px">
+        <div
+          style="
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 30px;
+          "
+        >
+          <div>
+            <span
+              style="
+                color: var(--color-gray-medium);
+                text-transform: uppercase;
+                font-size: 0.8rem;
+                letter-spacing: 1px;
+              "
+              >Siga-nos</span
+            >
+            <h2 style="font-size: 1.5rem">@jw_store_f</h2>
+          </div>
+          <a
+            href="https://www.instagram.com/jw_store_f/"
+            target="_blank"
+            aria-label="Instagram JW Store"
+            style="
+              font-size: 1.8rem;
+              color: var(--color-primary);
+              transition: color var(--duration-fast);
+            "
+          >
+            <i class="fab fa-instagram"></i>
+          </a>
+        </div>
+        <div
+          style="
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+          "
+        >
+          <img
+            src="src/imagem-insta.png"
+            alt="imagens Insta 1"
+            style="aspect-ratio: 1; object-fit: cover"
+          />
+          <img
+            src=""
+            alt="imagens Insta 2"
+            style="aspect-ratio: 1; object-fit: cover"
+          />
+          <img
+            src=""
+            alt="imagens Insta 3"
+            style="aspect-ratio: 1; object-fit: cover"
+          />
+          <img
+            src=""
+            alt="imagens Insta 4"
+            style="aspect-ratio: 1; object-fit: cover"
+          />
+        </div>
+      </section>
+
+      <!-- Newsletter -->
+      <section class="newsletter" style="margin-top: 100px">
+        <div class="container">
+          <h2
+            style="
+              font-size: 2rem;
+              text-transform: uppercase;
+              margin-bottom: 15px;
+            "
+          >
+            Join the Club
+          </h2>
+          <p style="opacity: 0.8">
+            Receba acesso antecipado aos próximos drops e ofertas exclusivas.
+          </p>
+          <form class="newsletter-form" id="newsletterForm">
+            <input
+              type="email"
+              class="newsletter-input"
+              placeholder="Seu melhor e-mail"
+              required
+            />
+            <button type="submit" class="newsletter-btn">Assinar</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <h4>JW Store</h4>
+            <p
+              style="
+                color: var(--color-gray-medium);
+                font-size: 0.9rem;
+                line-height: 1.6;
+              "
+            >
+              Texto de rodapé sobre a loja. Endereço, contato e outras
+              informações relevantes.
+            </p>
+          </div>
+          <div>
+            <h4>Navegação</h4>
+            <a href="#">Home</a>
+            <a href="#">Shop All</a>
+            <a href="#">Acessórios</a>
+            <a href="#">Sale</a>
+          </div>
+          <div>
+            <h4>Suporte</h4>
+            <a href="#">FAQ</a>
+            <a href="#">Envio e Devolução</a>
+            <a href="#">Tabela de Medidas</a>
+            <a href="#">Contato</a>
+          </div>
+        </div>
+        <div
+          style="
+            text-align: center;
+            border-top: 1px solid #ddd;
+            padding-top: 20px;
+            font-size: 0.8rem;
+            color: var(--color-gray-medium);
+          "
+        >
+          &copy;JW Store. Todos os direitos reservados.
+        <p></p>
+        <a href="https://www.linkedin.com/in/antonio-ithalo-3807813a2/" 
+        style="text-align: center;
+            padding-top: 5px;
+            font-size: 0.8rem;
+            color: var(--color-gray-medium);
+          " 
+          target="_blank">Desenvolvido por: Antonio Ithalo</a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Cart Overlay -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <aside class="cart-sidebar" id="cartSidebar">
+      <div class="cart-header">
+        <h3>Sua Sacola (<span id="cartCountSidebar">0</span>)</h3>
+        <button class="icon-btn" id="closeCartBtn">&times;</button>
+      </div>
+      <div class="cart-body" id="cartBody">
+        <!-- Items via JS -->
+      </div>
+      <div class="cart-footer">
+        <!-- Botão WhatsApp Checkout -->
+        <div
+          style="
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            font-weight: 700;
+            font-size: 1.1rem;
+          "
+        >
+          <span>Total</span>
+          <span id="cartTotal">R$ 0,00</span>
+        </div>
+        <button
+          class="btn btn-success btn-full whatsapp-checkout-btn"
+          id="whatsappCheckoutBtn"
+        >
+          <i class="fab fa-whatsapp"> </i> Finalizar no WhatsApp
+        </button>
+      </div>
+    </aside>
+
+    <!-- MODAL DE PRODUTO AVANÇADO  -->
+    <div class="product-modal-overlay" id="productModalOverlay">
+      <div class="product-modal-container" id="productModal">
+        <button class="modal-close-btn" id="modalCloseBtn">&times;</button>
+
+        <div class="modal-content">
+          <div class="modal-image-section">
+            <img
+              id="modalProductImage"
+              src=""
+              alt=""
+              class="modal-product-img"
+            />
+          </div>
+
+          <div class="modal-details-section">
+            <h2 id="modalProductName" class="modal-product-name"></h2>
+            <div id="modalProductPrice" class="modal-product-price"></div>
+            <p id="modalProductDesc" class="modal-product-desc">
+              Corte oversized premium. Feito com 100% algodão penteado. Estampa
+              silk digital de alta definição.
+            </p>
+
+            <form id="productModalForm" class="modal-form">
+              <!-- Seção de Dados do Cliente -->
+              <!-- Seção de Dados do Cliente -->
+              <div class="modal-form-section">
+                <label class="modal-form-label">Seus Dados</label>
+                <div class="input-group" style="margin-bottom: 15px">
+                  <input
+                    type="text"
+                    id="userName"
+                    class="modal-input"
+                    placeholder="Nome completo"
+                    required
+                    autocomplete="off"
+                  />
+                  <div class="modal-error-msg" id="nameError"></div>
+                </div>
+                <div class="input-group">
+                  <input
+                    type="tel"
+                    id="userPhone"
+                    class="modal-input"
+                    placeholder="WhatsApp (11) 99999-9999"
+                    required
+                    maxlength="15"
+                    autocomplete="off"
+                  />
+                  <div class="modal-error-msg" id="phoneError"></div>
+                </div>
+                <div
+                  id="dataSavedInfo"
+                  style="
+                    margin-top: 10px;
+                    padding: 8px 12px;
+                    background: rgba(52, 199, 89, 0.1);
+                    border-radius: var(--radius-sm);
+                    border-left: 3px solid var(--color-success);
+                    font-size: 0.75rem;
+                    color: var(--color-gray-medium);
+                    display: none;
+                  "
+                ></div>
+              </div>
+
+              <!-- Seção de Tamanho -->
+              <div class="modal-form-section">
+                <label class="modal-form-label" style="margin-top: 20px"
+                  >Tamanho
+                </label>
+                <div class="modal-size-selector" id="sizeSelector">
+                  <button type="button" class="modal-size-option" data-size="P">
+                    P
+                  </button>
+                  <button type="button" class="modal-size-option" data-size="M">
+                    M
+                  </button>
+                  <button type="button" class="modal-size-option" data-size="G">
+                    G
+                  </button>
+                  <button
+                    type="button"
+                    class="modal-size-option"
+                    data-size="GG"
+                  >
+                    GG
+                  </button>
+                </div>
+                <div class="modal-error-msg" id="sizeError"></div>
+              </div>
+
+              <!-- Seção de Entrega -->
+              <div class="modal-form-section">
+                <label class="modal-form-label">Entrega</label>
+                <div class="modal-delivery-options">
+                  <label class="modal-delivery-option">
+                    <input
+                      type="radio"
+                      name="delivery"
+                      value="delivery"
+                      id="deliveryRadio"
+                    />
+                    <span class="modal-delivery-label">
+                      <i class="fas fa-truck"></i> Entrega
+                    </span>
+                  </label>
+                  <label class="modal-delivery-option">
+                    <input
+                      type="radio"
+                      name="delivery"
+                      value="pickup"
+                      id="pickupRadio"
+                      checked
+                    />
+                    <span class="modal-delivery-label">
+                      <i class="fas fa-store"></i> Retirada na Loja
+                    </span>
+                  </label>
+                </div>
+
+                              <!-- Campos de Endereço (mostrar apenas se entrega selecionada) -->
+                <div id="addressFields" class="modal-address-fields">
+                  <div class="input-group">
+                    <input type="text" id="addressStreet" class="modal-input" placeholder="Rua/Avenida" autocomplete="off">
+                  </div>
+                  <div class="modal-input-row">
+                    <input type="text" id="addressNumber" class="modal-input" placeholder="Número" style="flex: 1;" autocomplete="off">
+                    <input type="text" id="addressComplement" class="modal-input" placeholder="Complemento" style="flex: 1;" autocomplete="off">
+                  </div>
+                  <div class="modal-input-row">
+                    <input type="text" id="addressDistrict" class="modal-input" placeholder="Bairro" style="flex: 1;" autocomplete="off">
+                    <input type="text" id="addressCity" class="modal-input" placeholder="Cidade" style="flex: 1;" autocomplete="off">
+                  </div>
+                </div>
+
+              <!-- Quantidade e Total -->
+              <div class="modal-form-section modal-qty-section">
+                <div>
+                  <label class="modal-form-label" style="margin-top: 20px;">Quantidade</label>
+                  <div class="modal-quantity-selector">
+                    <button
+                      type="button"
+                      class="modal-qty-btn"
+                      id="decreaseQty"
+                    >
+                      -
+                    </button>
+                    <span id="productQty" class="modal-qty-value">1</span>
+                    <button
+                      type="button"
+                      class="modal-qty-btn"
+                      id="increaseQty"
+                    >
+                      +
+                    </button>
+                  </div>
+                </div>
+                <div class="modal-total-display">
+                  <label class="modal-form-label">Subtotal</label>
+                  <div id="modalSubtotal" class="modal-subtotal-price">
+                    R$ 0,00
+                  </div>
+                </div>
+              </div>
+
+              <button
+                type="submit"
+                class="btn btn-primary btn-full"
+                id="addToCartBtn"
+              >
+                Adicionar à Sacola <i class="fas fa-shopping-bag"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
